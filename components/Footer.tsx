@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import { motion } from 'motion/react';
 import { NavbarLogo } from './ui/resizable-navbar';
 
 const Footer = () => {
