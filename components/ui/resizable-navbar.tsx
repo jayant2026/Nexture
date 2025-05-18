@@ -7,7 +7,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
-
+import Link from "next/link";
 import React, { useRef, useState } from "react";
 
 
@@ -125,21 +125,26 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => (
-        <a
-          onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 hover:text-white"
-          key={`link-${idx}`}
+        <Link
           href={item.link}
+          key={`link-${idx}`}
+          passHref
+          legacyBehavior
         >
-          {hovered === idx && (
-            <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
-            />
-          )}
-          <span className="relative z-20">{item.name}</span>
-        </a>
+          <a
+            className="relative px-4 py-2 text-neutral-600 hover:text-white"
+            onMouseEnter={() => setHovered(idx)}
+            onClick={onItemClick}
+          >
+            {hovered === idx && (
+              <motion.div
+                layoutId="hovered"
+                className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+              />
+            )}
+            <span className="relative z-20">{item.name}</span>
+          </a>
+        </Link>
       ))}
     </motion.div>
   );
@@ -231,8 +236,8 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
-      href="#"
+    <Link
+      href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <img
@@ -242,7 +247,7 @@ export const NavbarLogo = () => {
         height={30}
       />
       <span className="font-bold text-black text-2xl">Nexture</span>
-    </a>
+    </Link>
   );
 };
 
@@ -275,9 +280,20 @@ export const NavbarButton = ({
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
 
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={cn(baseStyles, variantStyles[variant], className)}
+        {...props}
+      >
+        {children}
+      </Link>
+    );
+  }
+
   return (
     <Tag
-      href={href || undefined}
       className={cn(baseStyles, variantStyles[variant], className)}
       {...props}
     >

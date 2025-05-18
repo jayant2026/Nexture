@@ -11,24 +11,25 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
+import Link from "next/link";
 
 export function NavbarDemo() {
   const navItems = [
     {
       name: "Sales Outsourcing",
-      link: "#outsourcing",
+      link: "/outsourcing",
     },
     {
       name: "Courses",
-      link: "#courses",
+      link: "/courses",
     },
     {
       name: "Recruitment",
-      link: "#recruitment",
+      link: "/recruitment",
     },
     {
-        name: "Jobs",
-        link: "#placements",
+      name: "Jobs",
+      link: "/jobs",
     },
   ];
 
@@ -43,9 +44,9 @@ export function NavbarDemo() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="dark" href="tel:+918800589923">
-                Book a Call
+              Book a Call
             </NavbarButton>
-            <NavbarButton variant="primary">Contact Us</NavbarButton>
+            <NavbarButton variant="primary" href="/contact">Contact Us</NavbarButton>
           </div>
         </NavBody>
 
@@ -64,14 +65,14 @@ export function NavbarDemo() {
             onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="relative text-neutral-600 dark:text-neutral-300"
               >
                 <span className="block">{item.name}</span>
-              </a>
+              </Link>
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
@@ -86,6 +87,7 @@ export function NavbarDemo() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
+                href="/contact"
               >
                 Contact Us
               </NavbarButton>

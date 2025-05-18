@@ -31,3 +31,81 @@ export const clientLogos = [
     { name: "Startup Innovations", src: "./ClientLogo-4.webp" },
     { name: "EdTech Leader", src: "./ClientLogo-5.png" },
 ];
+
+
+export const industryServices = [
+    {
+        industry: "EdTech",
+        services: [
+            "Lead qualification and nurturing",
+            "Demo scheduling and product showcases",
+            "Course enrollment support",
+            "Student retention outreach"
+        ]
+    },
+    {
+        industry: "BFSI",
+        services: [
+            "Financial product sales",
+            "Insurance policy consultations",
+            "Loan application processing",
+            "Investment advisory support"
+        ]
+    },
+    {
+        industry: "E-commerce",
+        services: [
+            "Pre-sales consultation",
+            "Order processing support",
+            "Returns and exchanges management",
+            "Customer retention campaigns"
+        ]
+    },
+    {
+        industry: "Gaming",
+        services: [
+            "New user acquisition",
+            "In-game purchase consultation",
+            "Tournament promotions",
+            "Player retention outreach"
+        ]
+    },
+    {
+        industry: "FMCG",
+        services: [
+            "Retailer acquisition and support",
+            "Distribution network management",
+            "Product launch campaigns",
+            "Consumer feedback collection"
+        ]
+    }
+];
+
+
+export const hiringProcess = [
+    {
+      step: "1",
+      title: "Requirement Analysis",
+      description: "We thoroughly understand your specific hiring needs, company culture, and expectations."
+    },
+    {
+      step: "2",
+      title: "Talent Matching",
+      description: "We match your requirements with our pool of trained professionals with relevant skills."
+    },
+    {
+      step: "3",
+      title: "Candidate Screening",
+      description: "Our team conducts preliminary interviews and assessments to ensure quality matches."
+    },
+    {
+      step: "4",
+      title: "Client Interviews",
+      description: "You interview the shortlisted candidates and select the ones that fit your team best."
+    },
+    {
+      step: "5",
+      title: "Onboarding Support",
+      description: "We provide support during the transition to ensure smooth integration into your team."
+    }
+];
