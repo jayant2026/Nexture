@@ -8,6 +8,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 import React, { useRef, useState } from "react";
 
@@ -126,7 +127,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => (
-        <a
+        <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
           className="relative px-4 py-2 text-neutral-600 hover:text-white"
@@ -140,7 +141,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             />
           )}
           <span className="relative z-20">{item.name}</span>
-        </a>
+        </Link>
       ))}
     </motion.div>
   );
@@ -232,7 +233,7 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
+    <Link
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
@@ -243,42 +244,66 @@ export const NavbarLogo = () => {
         height={30}
       />
       <span className="font-bold text-black text-2xl">Nexture</span>
-    </a>
+    </Link>
   );
 };
 
+type Variant = "primary" | "secondary" | "dark" | "gradient";
+
+interface BaseProps {
+  children: React.ReactNode;
+  className?: string;
+  variant?: Variant;
+}
+
+// Anchor props (with `as?: 'a'`)
+type AnchorButtonProps = BaseProps & {
+  as?: "a";
+  href: string;
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
+// Button props (with `as: 'button'`)
+type RealButtonProps = BaseProps & {
+  as: "button";
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+// Custom component props (e.g., `as={Link}`)
+type CustomComponentProps = BaseProps & {
+  as: React.ElementType;
+  href?: string;
+} & React.ComponentPropsWithoutRef<any>;
+
+type NavbarButtonProps = AnchorButtonProps | RealButtonProps | CustomComponentProps;
+
 export const NavbarButton = ({
-  href,
   as: Tag = "a",
   children,
   className,
   variant = "primary",
   ...props
-}: {
-  href?: string;
-  as?: React.ElementType;
-  children: React.ReactNode;
-  className?: string;
-  variant?: "primary" | "secondary" | "dark" | "gradient";
-} & (
-  | React.ComponentPropsWithoutRef<"a">
-  | React.ComponentPropsWithoutRef<"button">
-)) => {
+}: NavbarButtonProps) => {
   const baseStyles =
-    "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-4 py-2 rounded-md text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
-  const variantStyles = {
+  const variantStyles: Record<Variant, string> = {
     primary:
-      "shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
-    secondary: "bg-transparent shadow-none dark:text-white",
-    dark: "bg-black text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+      "bg-white text-black shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+    secondary: "bg-transparent text-black dark:text-white shadow-none",
+    dark:
+      "bg-black text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
     gradient:
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
 
+  // Extract href manually for anchor/custom components
+  const href =
+    typeof Tag === "string" && Tag === "a" && "href" in props
+      ? (props as AnchorButtonProps).href
+      : undefined;
+
   return (
     <Tag
-      href={href || undefined}
+      {...(href ? { href } : {})}
       className={cn(baseStyles, variantStyles[variant], className)}
       {...props}
     >

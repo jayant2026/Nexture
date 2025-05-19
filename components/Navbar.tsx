@@ -46,7 +46,7 @@ export function NavbarDemo() {
             <NavbarButton variant="dark" href="tel:+918800589923">
               Book a Call
             </NavbarButton>
-            <NavbarButton variant="primary" href="/contact">Contact Us</NavbarButton>
+            <NavbarButton variant="primary" href="/contact" as={Link}>Contact Us</NavbarButton>
           </div>
         </NavBody>
 
@@ -84,6 +84,7 @@ export function NavbarDemo() {
                 Book a Call
               </NavbarButton>
               <NavbarButton
+                as={Link}
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"

@@ -7,19 +7,19 @@ const Footer = () => {
     {
       title: "Services",
       links: [
-        { name: "BPO & Sales Outsourcing", href: "#outsourcing" },
-        { name: "Sales Training Courses", href: "#courses" },
-        { name: "Recruitment Services", href: "#recruitment" },
-        { name: "Jobs & Placements", href: "#placements" },
+        { name: "BPO & Sales Outsourcing", href: "/outsourcing" },
+        { name: "Sales Training Courses", href: "/courses" },
+        { name: "Recruitment Services", href: "/recruitment" },
+        { name: "Jobs & Placements", href: "/jobs" },
       ],
     },
     {
       title: "Company",
       links: [
-        { name: "Contact Us", href: "#contact" },
-        { name: "About Nexture", href: "#about" },
-        { name: "Our Expertise", href: "#expertise" },
-        { name: "Career Growth", href: "#careers" },
+        { name: "Contact Us", href: "/contact" },
+        { name: "About Nexture", href: "/about" },
+        { name: "Our Expertise", href: "/expertise" },
+        { name: "Career Growth", href: "/careers" },
       ],
     },
     {

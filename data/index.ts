@@ -109,3 +109,79 @@ export const hiringProcess = [
       description: "We provide support during the transition to ensure smooth integration into your team."
     }
 ];
+
+// Mock course highlights
+export const courseHighlights = [
+    {
+      title: "Live Interactive Classes",
+      description: "60+ hours of live online sessions with industry experts focusing on practical skills",
+    },
+    {
+      title: "Industry Certification",
+      description: "Recognized certification to boost your resume and credibility in the job market",
+    },
+    {
+      title: "Placement Guarantee",
+      description: "Interview guarantee with our pay-after-placement model: pay ₹3K upfront + 4% of CTC post-placement",
+    },
+    {
+      title: "Hands-on Projects",
+      description: "Work on real-world sales scenarios to build your portfolio and experience",
+    }
+];
+
+// Mock placement partner logos
+export const placementPartners = [
+    { name: "Tech Company", src: "https://via.placeholder.com/150x50?text=TechCo" },
+    { name: "Finance Plus", src: "https://via.placeholder.com/150x50?text=FinancePlus" },
+    { name: "Global Retail", src: "https://via.placeholder.com/150x50?text=GlobalRetail" },
+    { name: "EdTech Leader", src: "https://via.placeholder.com/150x50?text=EdTech" },
+    { name: "Insurance Pro", src: "https://via.placeholder.com/150x50?text=Insurance" }
+];
+
+// Mock FAQs
+export const faqs = [
+    {
+      question: "What is the total course fee?",
+      answer: "The course fee is ₹3,999 upfront, plus 4% of your CTC after successful placement. This pay-after-placement model ensures that we're invested in your success."
+    },
+    {
+      question: "Do I need prior sales experience?",
+      answer: "No prior experience is required. Our course is designed for beginners, and we teach you everything from the basics to advanced sales techniques."
+    },
+    {
+      question: "How long does the course take to complete?",
+      answer: "The course includes 60+ hours of live classes spread over 8-10 weeks, with additional time for assignments and projects."
+    },
+    {
+      question: "What is the placement guarantee?",
+      answer: "A candidate has to ensure discipline in the course by ensuring 75% attendance. Post-course completion, they need to secure more than 60% marks in the final course assessment. After this, placement team will align 5 interviews for the candidate. 90% course graduates cracked jobs in this phase."
+    },
+    {
+      question: "Are there any minimum qualification requirements?",
+      answer: "Candidates should have completed 12th grade (10+2) education. No specific degree requirement, but good communication skills are essential."
+    },
+    {
+      question: "Can I download a course brochure?",
+      answer: "Yes, you can download our detailed course brochure from our website by filling the form on this page."
+    }
+  ];
+
+  // Mock mentor data
+export const mentors = [
+   {
+      name: "Ayush Sharma",
+      role: "Sales Director at Rippling",
+      image: "https://iili.io/34weOmu.png"
+    },
+    {
+      name: "Shivam G",
+      role: "Sales Director at Toddle",
+      image: "https://iili.io/34w504p.png"
+    },
+    {
+      name: "Shoaib Ahmed",
+      role: "Group Product Manager at Nutrogena",
+      image: "https://iili.io/34wwOmJ.png"
+    }
+];
