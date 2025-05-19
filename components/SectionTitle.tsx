@@ -1,6 +1,7 @@
 import { Book, Briefcase, Phone, Users } from 'lucide-react'
 import React from 'react'
 import { NavbarButton } from './ui/resizable-navbar'
+import Link from 'next/link'
 
 const SectionTitle = () => {
   return (
@@ -23,7 +24,7 @@ const SectionTitle = () => {
               </div>
               <h2 className="text-xl font-bold mb-2 text-neutral-800">Sales Outsourcing</h2>
               <p className="text-neutral-600 mb-6">Expert sales agents & customer support teams for EdTech, BFSI, E-commerce & more.</p>
-              <NavbarButton variant="primary" className="w-full">Learn More</NavbarButton>
+              <NavbarButton as={Link} variant="primary" className="w-full">Learn More</NavbarButton>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="bg-green-100 p-3 rounded-full w-fit mb-4">
@@ -31,7 +32,7 @@ const SectionTitle = () => {
               </div>
               <h2 className="text-xl font-bold mb-2 text-neutral-800">Sales Courses</h2>
               <p className="text-neutral-600 mb-6">Comprehensive training with pay-after-placement model for aspiring sales professionals.</p>
-              <NavbarButton variant="primary" className="w-full">Learn More</NavbarButton>
+              <NavbarButton as={Link} variant="primary" className="w-full">Learn More</NavbarButton>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="bg-purple-100 p-3 rounded-full w-fit mb-4">
@@ -39,7 +40,7 @@ const SectionTitle = () => {
               </div>
               <h2 className="text-xl font-bold mb-2 text-neutral-800">Recruitment Services</h2>
               <p className="text-neutral-600 mb-6">Hire trained BD and customer support professionals from our curated talent pool.</p>
-              <NavbarButton variant="primary" className="w-full">Learn More</NavbarButton>
+              <NavbarButton as={Link} variant="primary" className="w-full">Learn More</NavbarButton>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="bg-amber-100 p-3 rounded-full w-fit mb-4">
@@ -47,7 +48,7 @@ const SectionTitle = () => {
               </div>
               <h2 className="text-xl font-bold mb-2 text-neutral-800">Placement Services</h2>
               <p className="text-neutral-600 mb-6">Find your dream job in sales and support roles with top companies across India.</p>
-              <NavbarButton variant="primary" className="w-full">Learn More</NavbarButton>
+              <NavbarButton as={Link} variant="primary" className="w-full">Learn More</NavbarButton>
             </div>
           </div>
         </div>
