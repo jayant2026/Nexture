@@ -3,6 +3,7 @@ import ContactForm from '@/components/ContactForm'
 import Hero from '@/components/Hero'
 import SectionTitle from '@/components/SectionTitle'
 import TestimonialsSection from '@/components/TestimonialsSection'
+import WebinarSection from '@/components/WebinarSection'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import React from 'react'
 
@@ -15,6 +16,7 @@ const page = () => {
       <TestimonialsSection />
       <ClientLogos />
       <ContactForm />
+      <WebinarSection />
     </>
   )
 }

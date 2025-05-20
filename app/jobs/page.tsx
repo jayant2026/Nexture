@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { ArrowRight, BookOpen, CheckCircle } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
+import JobListings from '@/components/jobs/JobListings'
 
 const page = () => {
   return (
@@ -139,6 +140,9 @@ const page = () => {
         </div>
       </section>
 
+      {/* JobListings */}
+      <JobListings />
+
       {/* Course Promotion */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-8">
@@ -190,8 +194,6 @@ const page = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <ContactForm />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-gray-600 to-gray-800 text-white">
