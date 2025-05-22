@@ -62,21 +62,39 @@ const ContactPage = () => {
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
+            <div className="bg-white p-8 rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] transition-all duration-300 hover:shadow-lg">
               <h2 className="text-2xl font-bold mb-6 bg-gray-800 bg-clip-text text-transparent">Send Us a Message</h2>
-              <ContactForm />
+              <p className='text-gray-600 max-w-md mb-6'>Fill out the form and we'll get back to you shortly</p>
+              <ContactForm
+                title=''
+                subtitle=''
+              />
             </div>
             
-            <div className="rounded-xl overflow-hidden shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] h-[600px]">
+            <div className="rounded-xl overflow-hidden shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] h-[600px] transition-all duration-300 hover:shadow-lg relative group">
               {/* Replace with an actual Google Map integration */}
-              <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <MapPin size={48} className="mx-auto mb-4 text-purple-600" />
-                  <h3 className="font-bold text-xl mb-2 text-gray-800">Our Location</h3>
+              <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
+                <div className="text-center p-8 bg-white/80 backdrop-blur-sm rounded-xl shadow-md z-10 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105">
+                  <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-4">
+                    <MapPin size={32} />
+                  </div>
+                  <h3 className="font-bold text-xl mb-3 text-gray-800">Our Location</h3>
                   <p className="text-gray-600 max-w-md">
                     RMZ Ecospace, Bellandur, Bengaluru, India
                   </p>
+                  <a 
+                    href="https://maps.google.com/?q=RMZ+Ecospace+Bellandur+Bengaluru+India" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 px-4 py-2 bg-black text-white rounded-md hover:bg-gray-700 transition-colors duration-300"
+                  >
+                    Get Directions
+                  </a>
                 </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute top-10 left-10 h-32 w-32 rounded-full bg-purple-200 opacity-20 blur-2xl"></div>
+                <div className="absolute bottom-10 right-10 h-40 w-40 rounded-full bg-blue-200 opacity-20 blur-2xl"></div>
               </div>
             </div>
           </div>

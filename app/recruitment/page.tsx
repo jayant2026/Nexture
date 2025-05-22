@@ -4,8 +4,8 @@ import React from 'react';
 import { Users, CheckCircle, Briefcase, FileCheck, UserCheck, Building2 } from 'lucide-react';
 import { hiringProcess } from '@/data';
 import ContactForm from '@/components/ContactForm';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import FeatureCard from '@/components/ui/FeatureCard';
+import { Phone } from 'lucide-react';
 
 const RecruitmentPage = () => {
   // Recruitment services
@@ -42,6 +42,14 @@ const RecruitmentPage = () => {
     "Ongoing support and performance monitoring"
   ];
 
+  // Handle smooth scrolling to sections
+  const scrollToSection = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -60,18 +68,18 @@ const RecruitmentPage = () => {
                 Our recruitment services connect you with pre-trained, qualified professionals ready to drive your business forward.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="#contact-form" 
-                  className="px-6 py-3 bg-black text-white font-medium rounded-md hover:bg-gray-700 transition-colors duration-300 text-center"
+                <button 
+                  onClick={() => scrollToSection('contact-form')} 
+                  className="px-6 py-3 bg-black text-white font-medium rounded-md hover:bg-gray-700 transition-colors duration-300 text-center cursor-pointer"
                 >
                   Hire Talent Now
-                </a>
-                <a 
-                  href="#hiring-process" 
-                  className="px-6 py-3 bg-white text-gray-600 font-medium rounded-md border border-gray-200 hover:bg-gray-150 transition-colors duration-300 text-center"
+                </button>
+                <button 
+                  onClick={() => scrollToSection('hiring-process')} 
+                  className="px-6 py-3 bg-white text-gray-600 font-medium rounded-md border border-gray-200 hover:bg-gray-150 transition-colors duration-300 text-center cursor-pointer"
                 >
                   Our Process
-                </a>
+                </button>
               </div>
             </div>
             <div className="relative">
@@ -183,8 +191,63 @@ const RecruitmentPage = () => {
 
 
       {/* Contact Form */}
-      <section id="contact-form">
-        <ContactForm />
+      <section id="contact-form" className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="bg-white p-8 rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] transition-all duration-300 hover:shadow-lg">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gray-800 bg-clip-text text-transparent">
+                Discuss Your Hiring Needs
+              </h2>
+              <p className="text-lg text-neutral-600 mb-8">
+                Let us know what kind of talent you're looking for, and we'll help you find the right match.
+              </p>
+              
+              <div className="mt-8 space-y-6">
+                <div className="flex items-center gap-4 p-5 bg-blue-50 rounded-lg">
+                  <div className="bg-blue-100 p-3 rounded-full">
+                    <Phone className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-800">Contact Our Recruitment Team</h3>
+                    <p className="text-gray-600 text-sm mb-1">For urgent hiring needs, speak directly with our team:</p>
+                    <a href="tel:+918800589923" className="flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                      <Phone size={16} className="mr-2" />
+                      <span>+91 8800589923</span>
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="mt-8">
+                  <h3 className="font-bold text-xl mb-4 text-gray-800">What to expect:</h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Initial consultation within 24 hours",
+                      "Candidate profiles within 3-5 business days",
+                      "Support throughout the interview process",
+                      "Post-placement follow-up and assistance"
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <div className="bg-green-100 p-1 rounded-full mt-1">
+                          <CheckCircle size={16} className="text-green-600" />
+                        </div>
+                        <p className="text-gray-700">{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <ContactForm 
+                title="Get in Touch"
+                subtitle="Fill the form below and our recruitment team will contact you"
+                includeHiringNeeds={true}
+                submitButtonText="Submit Inquiry"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* CTA Section */}
@@ -194,12 +257,12 @@ const RecruitmentPage = () => {
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Partner with Nexture for access to pre-trained, qualified professionals who can hit the ground running.
           </p>
-          <a 
-            href="#contact-form" 
-            className="inline-block px-8 py-4 bg-white text-gray-700 font-medium rounded-md hover:bg-gray-100 transition-colors duration-300"
+          <button 
+            onClick={() => scrollToSection('contact-form')} 
+            className="inline-block px-8 py-4 bg-white text-gray-700 font-medium rounded-md hover:bg-gray-100 transition-colors duration-300 cursor-pointer"
           >
             Start Recruiting Today
-          </a>
+          </button>
         </div>
       </section>
     </div>

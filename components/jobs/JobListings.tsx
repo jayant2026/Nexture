@@ -60,7 +60,7 @@ const JobListings = () => {
   });
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <section id='job-listings' className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Title - Inline implementation */}
         <div className="text-center mb-12">

@@ -1,10 +1,20 @@
+"use client";
+
 import Link from 'next/link'
 import React from 'react'
 import { ArrowRight, BookOpen, CheckCircle } from 'lucide-react'
-import ContactForm from '@/components/ContactForm'
 import JobListings from '@/components/jobs/JobListings'
+import ApplicationFormSection from '@/components/form/ApplicationFormSection'
 
 const page = () => {
+  // Handle smooth scrolling to sections
+  const scrollToSection = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -22,18 +32,18 @@ const page = () => {
               Browse opportunities with top companies across India for sales, telecalling, BPO, and customer support roles with competitive salary packages.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="#job-listings" 
-                className="px-6 py-3 bg-black text-white font-medium rounded-md hover:bg-gray-700 transition-colors duration-300 text-center"
+              <button
+                onClick={() => scrollToSection('job-listings')} 
+                className="px-6 py-3 bg-black text-white font-medium rounded-md hover:bg-gray-700 transition-colors duration-300 text-center cursor-pointer"
               >
                 View Job Listings
-              </Link>
-              <Link 
-                href="#apply-form" 
-                className="px-6 py-3 bg-white text-gray-600 font-medium rounded-md border border-gray-200 hover:bg-gray-50 transition-colors duration-300 text-center"
+              </button>
+              <button 
+                onClick={() => scrollToSection('apply-form')} 
+                className="px-6 py-3 bg-white text-gray-600 font-medium rounded-md border border-gray-200 hover:bg-gray-50 transition-colors duration-300 text-center cursor-pointer"
               >
                 Submit Your Resume
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -194,6 +204,8 @@ const page = () => {
         </div>
       </section>
 
+      <ApplicationFormSection />
+
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-gray-600 to-gray-800 text-white">
@@ -203,18 +215,18 @@ const page = () => {
             Apply now or explore our training programs to enhance your skills and employability.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="#job-listings" 
-              className="px-6 py-3 bg-white text-gray-700 font-medium rounded-md hover:bg-gray-100 transition-colors duration-300 text-center"
+            <button 
+              onClick={() => scrollToSection('job-listings')} 
+              className="px-6 py-3 bg-white text-gray-700 font-medium rounded-md hover:bg-gray-100 transition-colors duration-300 text-center cursor-pointer"
             >
               Browse Jobs
-            </Link>
-            <Link 
-              href="#apply-form" 
-              className="px-6 py-3 bg-transparent text-white font-medium rounded-md border border-white hover:bg-white/10 transition-colors duration-300 text-center"
+            </button>
+            <button 
+              onClick={() => scrollToSection('apply-form')} 
+              className="px-6 py-3 bg-transparent text-white font-medium rounded-md border border-white hover:bg-white/10 transition-colors duration-300 text-center cursor-pointer"
             >
               Submit Your Resume
-            </Link>
+            </button>
           </div>
         </div>
       </section>

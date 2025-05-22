@@ -11,8 +11,16 @@ const Hero = () => {
     setIsMounted(true);
   }, []);
 
+  // Handle smooth scrolling to sections
+  const scrollToSection = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 scroll-smooth">
       {/* Decorative elements with improved aesthetics */}
       <div className="absolute top-0 left-1/4 h-72 w-72 rounded-full bg-blue-200 opacity-20 blur-3xl" />
       <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-indigo-200 opacity-20 blur-3xl" />
@@ -73,12 +81,16 @@ const Hero = () => {
               }}
               className="mt-8 flex flex-wrap items-start gap-4 sm:flex-row"
             >
-              <button className="group relative overflow-hidden rounded-lg bg-black px-8 py-4 font-medium text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-gray-500/40 cursor-pointer">
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="group relative overflow-hidden rounded-lg bg-black px-8 py-4 font-medium text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-gray-500/40 cursor-pointer"
+              >
                 <span className="relative z-10">Request Proposal</span>
-                <span className="absolute bottom-0 left-0 h-1 w-full transform bg-white/20 transition-all duration-300 group-hover:h-full"></span>
-                <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>
-              <button className="relative rounded-lg border-2 border-slate-200 bg-white/80 px-8 py-4 font-medium text-slate-800 backdrop-blur-sm transition-all duration-300 hover:border-gray-300 hover:bg-gray-100 hover:shadow-lg hover:shadow-blue-100/60 cursor-pointer">
+              <button 
+                onClick={() => scrollToSection('services')} 
+                className="relative rounded-lg border-2 border-slate-200 bg-white/80 px-8 py-4 font-medium text-slate-800 backdrop-blur-sm transition-all duration-300 hover:border-gray-300 hover:bg-gray-100 hover:shadow-lg hover:shadow-blue-100/60 cursor-pointer"
+              >
                 View Services
               </button>
             </motion.div>

@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const SectionTitle = () => {
   return (
-    <section className="w-full py-20 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50">
+    <section id='services' className="w-full py-20 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gray-800 bg-clip-text text-transparent">
