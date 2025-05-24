@@ -34,8 +34,8 @@ const WebinarSection = () => {
                                     <User className="h-5 w-5 text-blue-600" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-gray-800">Digvijay Singh</h3>
-                                    <p className="text-gray-600">Ex-VP, Zepto | Ex-Senior VP, Physics Wallah</p>
+                                    <h3 className="font-bold text-lg text-gray-800">Harshit Vyas</h3>
+                                    <p className="text-gray-600">Ex-COO, Oyo</p>
                                 </div>
                             </div>
                             

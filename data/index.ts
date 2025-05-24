@@ -1,12 +1,12 @@
 // Mock testimonials data
 export const testimonials = [
-    {
-        quote: "Nexture's agent quality outshines other vendors who we work with by a margin. It is refreshing to see the BPO space have high quality agents at realistic rates.",
-        author: "Rathin Sharma",
-        position: "Head of Sales",
-        company: "Physics Wallah",
-        imageSrc: "https://iili.io/3rpxNuj.png"
-    },
+    // {
+    //     quote: "Nexture's agent quality outshines other vendors who we work with by a margin. It is refreshing to see the BPO space have high quality agents at realistic rates.",
+    //     author: "Rathin Sharma",
+    //     position: "Head of Sales",
+    //     company: "Physics Wallah",
+    //     imageSrc: "https://iili.io/3rpxNuj.png"
+    // },
     {
         quote: "Your proactive intervention made managing outsourcing a breeze. Compliments to your QA for their relentless pursuit of highest quality.",
         author: "Barnendu Sarkar",
@@ -25,7 +25,7 @@ export const testimonials = [
 
 // Mock client logos
 export const clientLogos = [
-    { name: "TechGrowth", src: "./ClientLogo-1.png" },
+    // { name: "TechGrowth", src: "./ClientLogo-1.png" },
     { name: "Finance Plus", src: "./ClientLogo-2.png" },
     { name: "Global Retail", src: "./ClientLogo-3.webp" },
     { name: "Startup Innovations", src: "./ClientLogo-4.webp" },
