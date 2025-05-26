@@ -193,12 +193,12 @@ const JobListings = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                  className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/20 overflow-hidden relative"
+                  className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/20 overflow-hidden relative flex flex-col h-full"
                 >
                   {/* Gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex-1 flex flex-col">
                     {/* Header */}
                     <div className="flex items-start gap-4 mb-6">
                       <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-blue-100 to-indigo-100 p-2">
@@ -253,13 +253,15 @@ const JobListings = () => {
                     </div>
                     
                     {/* Apply Button */}
-                    <a 
-                      href={`/jobs/${job.id}`}
-                      className="group/btn flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-xl hover:from-gray-600 hover:to-gray-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
-                    >
-                      <span>Apply Now</span>
-                      <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                    </a>
+                    <div className="mt-auto pt-4">
+                      <a 
+                        href={`/jobs/${job.id}`}
+                        className="group/btn flex items-center justify-center gap-2 w-full py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
+                      >
+                        <span>Apply Now</span>
+                        <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                      </a>
+                    </div>
                   </div>
                 </motion.div>
               )
