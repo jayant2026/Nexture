@@ -52,8 +52,6 @@ const page = () => {
               <ContactForm
                 title="Business Enquiry"
                 subtitle="Tell us about your requirements and our team will contact you shortly."
-                includeCompany={true}
-                includeHiringNeeds={true}
                 submitButtonText="Submit Request"
               />
             </div>

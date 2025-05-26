@@ -84,10 +84,10 @@ const ContactForm = ({
             type="text"
             id="company"
             name="company"
-            label={`Company Name ${includeHiringNeeds ? '*' : ''}`}
+            label="Company Name"
             value={formData.company}
             onChange={handleChange}
-            required={includeHiringNeeds}
+            required
             className="mb-4"
           />
         )}
@@ -127,6 +127,7 @@ const ContactForm = ({
             value={formData.message}
             onChange={handleChange}
             className="mb-4"
+            required
           />
         )}
         
