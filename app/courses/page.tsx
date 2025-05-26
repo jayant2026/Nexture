@@ -5,6 +5,7 @@ import React from 'react';
 import { motion } from "motion/react";
 import { mentors, courseHighlights, faqs, clientLogos } from '@/data/index';
 import ClientLogos from '@/components/ClientLogos';
+import CallbackForm from '@/components/CallbackForm';
 import { cn } from '@/lib/utils';
 
 const Page = () => {
@@ -12,10 +13,6 @@ const Page = () => {
     <div className='min-h-screen'>
       {/* Hero Section - Improved with animations and decorative elements */}
       <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-        {/* Decorative elements */}
-        {/* <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-blue-200 opacity-10 blur-3xl" />  */}
-        {/* <div className="absolute top-0 right-1/4 h-80 w-80 rounded-full bg-indigo-200 opacity-10 blur-3xl" /> */}
-        
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -23,7 +20,7 @@ const Page = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-4xl md:text-5xl font-bold mb-4 bg-gray-800 bg-clip-text text-transparent"
+                className="text-4xl md:text-5xl font-bold mb-4 py-2 bg-gray-800 bg-clip-text text-transparent"
               >
                 Business Development Course
               </motion.h1>
@@ -55,109 +52,118 @@ const Page = () => {
                 </Link>
               </motion.div>
             </div>
-            <div className="relative rounded-lg overflow-hidden h-[400px]">
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" 
-                alt="Business Development Training"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                <p className="text-white font-bold text-xl">Learn from Industry Experts</p>
-                <p className="text-white/80">Practical skills that matter in the real world</p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white rounded-xl shadow-lg p-8 backdrop-blur-sm border border-gray-100 max-w-md ml-auto"
+            >
+              <h3 className="text-2xl font-bold mb-2 text-gray-800">Get Course Details</h3>
+              <p className="text-neutral-600 mb-6">Leave your details and our counselor will contact you with full course information</p>
+              <CallbackForm inline={true} />
+              <div className="mt-6 pt-6 border-t border-gray-100">
+                <p className="text-sm text-gray-600 flex items-center gap-2">
+                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  Quick response within 24 hours
+                </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Course Overview */}
       <section className="py-20">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gray-800 bg-clip-text text-transparent">
-                Transform Your Career in Sales
-              </h2>
-              <p className="text-lg text-neutral-600 mb-8">
-                Comprehensive training with job guarantee for aspiring sales professionals
-              </p>
-              
-              <div className="space-y-6">
-                <p className="text-neutral-600">
-                  Our Business Development Course is designed to equip you with the skills, knowledge,
-                  and practical experience needed to excel in today's competitive sales environment.
-                  With a focus on real-world applications, you'll learn from industry experts who
-                  bring years of professional experience to the classroom.
+        
+        {/* Course Overview */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gray-800 bg-clip-text text-transparent">
+                  Transform Your Career in Sales
+                </h2>
+                <p className="text-lg text-neutral-600 mb-8">
+                  Comprehensive training with job guarantee for aspiring sales professionals
                 </p>
                 
-                <div className="flex items-center p-5 bg-blue-50 rounded-lg shadow-sm">
-                  <div className="mr-4 text-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-badge-indian-rupee"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M8 9h8"/><path d="M8 13h5"/><path d="M11 9v8"/></svg>
+                <div className="space-y-6">
+                  <p className="text-neutral-600">
+                    Our Business Development Course is designed to equip you with the skills, knowledge,
+                    and practical experience needed to excel in today's competitive sales environment.
+                    With a focus on real-world applications, you'll learn from industry experts who
+                    bring years of professional experience to the classroom.
+                  </p>
+                  
+                  <div className="flex items-center p-5 bg-blue-50 rounded-lg shadow-sm">
+                    <div className="mr-4 text-gray-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-badge-indian-rupee"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M8 9h8"/><path d="M8 13h5"/><path d="M11 9v8"/></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">Pay-After-Placement Model</h3>
+                      <p className="text-neutral-600">
+                        ₹3,999 upfront + 4% of CTC after placement. 
+                        We succeed when you succeed!
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Pay-After-Placement Model</h3>
-                    <p className="text-neutral-600">
-                      ₹3,999 upfront + 4% of CTC after placement. 
-                      We succeed when you succeed!
-                    </p>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white p-5 rounded-lg shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
+                      <h3 className="font-semibold text-gray-800">Course Duration</h3>
+                      <p className="text-neutral-600">60+ hours of live training</p>
+                    </div>
+                    <div className="bg-white p-5 rounded-lg shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
+                      <h3 className="font-semibold text-grayt-800">Next Batch</h3>
+                      <p className="text-neutral-600">Starting June 15, 2025</p>
+                    </div>
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white p-5 rounded-lg shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
-                    <h3 className="font-semibold text-gray-800">Course Duration</h3>
-                    <p className="text-neutral-600">60+ hours of live training</p>
-                  </div>
-                  <div className="bg-white p-5 rounded-lg shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
-                    <h3 className="font-semibold text-grayt-800">Next Batch</h3>
-                    <p className="text-neutral-600">Starting June 15, 2025</p>
-                  </div>
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                  <Link 
+                    href="#payment" 
+                    className="px-6 py-3 bg-black text-white font-medium rounded-md hover:bg-gray-700 transition-colors duration-300 text-center"
+                  >
+                    Enroll Now
+                  </Link>
+                  <Link 
+                    href="#brochure" 
+                    className="px-6 py-3 bg-white text-gray-600 font-medium rounded-md border border-gray-200 hover:bg-gray-50 transition-colors duration-300 text-center"
+                  >
+                    Download Brochure
+                  </Link>
                 </div>
               </div>
               
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="#payment" 
-                  className="px-6 py-3 bg-black text-white font-medium rounded-md hover:bg-gray-700 transition-colors duration-300 text-center"
-                >
-                  Enroll Now
-                </Link>
-                <Link 
-                  href="#brochure" 
-                  className="px-6 py-3 bg-white text-gray-600 font-medium rounded-md border border-gray-200 hover:bg-gray-50 transition-colors duration-300 text-center"
-                >
-                  Download Brochure
-                </Link>
-              </div>
-            </div>
-            
-            <div>
-              {/* Course highlights in a modern card layout */}
-              <div className="bg-white p-6 rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
-                <h3 className="text-xl font-bold mb-6 text-gray-800">What You'll Learn</h3>
-                <div className="space-y-4">
-                  {[
-                    "Sales fundamentals and modern techniques",
-                    "Building and nurturing client relationships",
-                    "Objection handling and negotiation",
-                    "CRM systems and sales automation",
-                    "Social selling and LinkedIn strategies",
-                    "Industry-specific sales approaches"
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                        <svg className="h-4 w-4 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+              <div>
+                {/* Course highlights in a modern card layout */}
+                <div className="bg-white p-6 rounded-xl shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
+                  <h3 className="text-xl font-bold mb-6 text-gray-800">What You'll Learn</h3>
+                  <div className="space-y-4">
+                    {[
+                      "Sales fundamentals and modern techniques",
+                      "Building and nurturing client relationships",
+                      "Objection handling and negotiation",
+                      "CRM systems and sales automation",
+                      "Social selling and LinkedIn strategies",
+                      "Industry-specific sales approaches"
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-start">
+                        <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                          <svg className="h-4 w-4 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <p className="text-neutral-600">{item}</p>
                       </div>
-                      <p className="text-neutral-600">{item}</p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </section>
 
       {/* Course Highlights - 4 cards */}
