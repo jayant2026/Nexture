@@ -44,7 +44,7 @@ const ResumeUpload = ({ onFileChange, required = true }: ResumeUploadProps) => {
           accept=".pdf,.doc,.docx"
           onChange={handleFileChange}
           className="hidden"
-          required={required}
+          // required={required}  <-- Remove this line
         />
       </div>
       <p className="text-xs text-gray-500">Accepted formats: PDF, DOC, DOCX (max 5MB)</p>
