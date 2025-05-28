@@ -7,10 +7,42 @@ import WebinarSection from '@/components/WebinarSection'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import { Mail, Phone } from 'lucide-react'
 import React from 'react'
+import Head from 'next/head';
 
 const page = () => {
   return (
     <>
+      <Head>
+        <title>Nexture | Sales Outsourcing, BPO, Training & Placement</title>
+        <meta
+          name="description"
+          content="Nexture offers premium BPO services, call center outsourcing, sales training, recruitment services, and job placement opportunities for professionals seeking 2-5 LPA CTC."
+        />
+        <meta
+          name="keywords"
+          content="Sales Outsourcing, BPO services, Call center outsourcing, Sales training, Recruitment services, Job placement, 2-5 LPA CTC"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Nexture | Sales Outsourcing, BPO, Training & Placement" />
+        <meta
+          property="og:description"
+          content="BPO and call center outsourcing services, upskilling through EdTech and sales courses, and placement services for 2-5 LPA jobs..."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/public/nexture.png" />
+        <meta property="og:url" content="https://nexture.live" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@nexture_live" />
+        <meta name="twitter:title" content="Nexture | BPO, Sales Courses & Placement Services" />
+        <meta
+          name="twitter:description"
+          content="Premium call center outsourcing, sales training, and placement services..."
+        />
+      </Head>
+
       <Hero />
       <SectionTitle />
       <WhyChooseUs />
