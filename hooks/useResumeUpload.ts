@@ -16,26 +16,7 @@ export const useResumeUpload = (jobId: string) => {
     console.log('Uploading resume file:', resumeFile.name);
     
     try {
-      // Check if the bucket exists and create it if it doesn't
-      const { data: buckets } = await supabase.storage.listBuckets();
-      const bucketExists = buckets?.some(bucket => bucket.name === 'job_applications');
-      
-      if (!bucketExists) {
-        console.log('Creating job_applications bucket');
-        const { error: bucketError } = await supabase.storage.createBucket('job_applications', {
-          public: false,
-          fileSizeLimit: 5242880, // 5MB
-        });
-        
-        if (bucketError) {
-          console.error('Bucket creation error:', bucketError);
-          toast.error("Failed to set up storage. Please try again.");
-          setIsUploading(false);
-          return { resumeUrl: '', resumeFilePath: '' };
-        }
-      }
-      
-      // Create a unique file path
+      // Create a unique file path without checking/creating bucket
       const fileExt = resumeFile.name.split('.').pop();
       const fileName = `${jobId}_${Date.now()}.${fileExt}`;
       const resumeFilePath = `resumes/${fileName}`;

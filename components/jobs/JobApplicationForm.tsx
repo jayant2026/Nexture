@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { supabase } from "@/lib/supabaseClient";
 import { DialogClose } from "@/components/ui/dialog";
-import ResumeUpload from "../ResumeUpload";
+import { Paperclip } from "lucide-react";
 import { useResumeUpload } from "@/hooks/useResumeUpload";
 
 interface JobApplicationFormProps {
@@ -29,9 +29,15 @@ const JobApplicationForm = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { uploadResume, isUploading } = useResumeUpload(jobId);
   
-  const handleResumeChange = (file: File | null) => {
-    console.log("Resume file changed:", file?.name);
-    setResumeFile(file);
+  const handleResumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const fileList = e.target.files;
+    if (fileList && fileList.length > 0) {
+      const file = fileList[0];
+      console.log("Resume file changed:", file.name);
+      setResumeFile(file);
+    } else {
+      setResumeFile(null);
+    }
   };
   
   const handleSubmit = async (e: React.FormEvent) => {
@@ -131,7 +137,29 @@ const JobApplicationForm = ({
         />
       </div>
       
-      <ResumeUpload onFileChange={handleResumeChange} />
+      <div className="space-y-2">
+        <Label htmlFor="resume">Upload Resume</Label>
+        <div className="border border-input rounded-md p-2 flex items-center">
+          <label 
+            htmlFor="resume" 
+            className="cursor-pointer flex items-center gap-2 p-2 rounded-md hover:bg-gray-50 flex-grow"
+          >
+            <Paperclip size={18} />
+            <span className="text-ellipsis overflow-hidden">
+              {resumeFile ? resumeFile.name : "Select a file"}
+            </span>
+          </label>
+          <input
+            id="resume"
+            type="file"
+            name="resume"
+            accept=".pdf,.doc,.docx"
+            onChange={handleResumeChange}
+            className="hidden"
+          />
+        </div>
+        <p className="text-xs text-gray-500">Accepted formats: PDF, DOC, DOCX (max 5MB)</p>
+      </div>
       
       <div className="flex justify-end gap-2 pt-4">
         <DialogClose asChild>
