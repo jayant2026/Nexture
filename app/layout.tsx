@@ -19,6 +19,28 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Nexture",
   description: "Sales Outsourcing, Upskilling Courses, and Job Placement in One Platform.",
+  openGraph: {
+    title: "Nexture",
+    description: "Sales Outsourcing, Upskilling Courses, and Job Placement in One Platform.",
+    url: "https://www.nexture.live",
+    siteName: "Nexture",
+    images: [
+      {
+        url: "https://www.nexture.live/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Nexture",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nexture",
+    description: "Sales Outsourcing, Upskilling Courses, and Job Placement in One Platform.",
+    images: ["https://www.nexture.live/og-image.png"],
+  },
 };
 
 export default function RootLayout({
