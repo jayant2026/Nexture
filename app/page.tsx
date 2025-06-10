@@ -30,7 +30,7 @@ const page = () => {
           content="BPO and call center outsourcing services, upskilling through EdTech and sales courses, and placement services for 2-5 LPA jobs..."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/public/nexture.png" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2784&q=80" />
         <meta property="og:url" content="https://nexture.live" />
 
         {/* Twitter Card */}
